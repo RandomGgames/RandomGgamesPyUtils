@@ -2,10 +2,10 @@
 Functions for reading and writing text files
 """
 
+from pathlib import Path
 import logging
 import os
 import tempfile
-from pathlib import Path
 
 logger = logging.getLogger(__name__)
 

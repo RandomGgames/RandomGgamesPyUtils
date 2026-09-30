@@ -4,8 +4,6 @@ Function for checking if a measured value falls within the target range.
 
 import logging
 import multiprocessing as mp
-import platform
-import sys
 import time
 
 logger = logging.getLogger()

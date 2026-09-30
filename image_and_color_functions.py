@@ -2,10 +2,10 @@
 Functions for working with images and colors
 """
 
+from PIL import Image, ImageTk
 import logging
 import math
 import tkinter as tk
-from PIL import Image, ImageTk
 
 import numpy as np
 

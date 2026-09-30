@@ -2,11 +2,11 @@
 Functions for reading and writing json files
 """
 
+from pathlib import Path
 import json
 import logging
 import os
 import tempfile
-from pathlib import Path
 
 logger = logging.getLogger(__name__)
 

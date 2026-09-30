@@ -2,16 +2,16 @@
 Functions for working with directories
 """
 
+from pathlib import Path
+from typing import Iterable, Pattern
 import hashlib
 import json
 import logging
 import os
 import re
-import time
 import tempfile
+import time
 import zipfile
-from pathlib import Path
-from typing import Iterable, Pattern
 
 import send2trash
 import win32com.client
