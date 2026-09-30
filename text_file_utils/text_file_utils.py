@@ -59,3 +59,27 @@ def write_text_file(file_path: str | Path, data: str | list[str], *, encoding: s
                 temp_file_path.unlink(missing_ok=True)
             except OSError:
                 logger.exception("Failed to clean up temporary file %s", temp_file_path)
+
+
+def append_text_file(file_path: str | Path, data: str | list[str], *, encoding: str = "utf-8") -> None:
+    """
+    Appends a string or a list of strings to the end of a text file.
+
+    Args:
+        file_path: Path to the file.
+        data: String or list of strings to append.
+        encoding: Encoding used to write the file.
+    """
+    file_path = Path(file_path)
+
+    if not file_path.parent.exists():
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        logger.debug("Created %s", file_path.parent)
+
+    with file_path.open("a", encoding=encoding, newline="\n") as file:
+        if isinstance(data, list):
+            file.write("\n".join(data))
+        else:
+            file.write(data)
+
+    logger.debug("Successfully appended data to %s", file_path)
