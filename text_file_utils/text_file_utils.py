@@ -1,5 +1,5 @@
 """
-Functions for reading and writing text files
+Functions for working with text files
 """
 
 from pathlib import Path
