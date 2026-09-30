@@ -1,35 +1,43 @@
-# RandomGgames Python Utils
+# Text File Utils
 
-A collection of reusable Python modules for use across my projects.
+A Python module for reading/writing text files.
 
-These modules are intended to be included in other projects as Git submodules rather than installed system-wide with `pip`. This keeps projects self-contained and makes them easy to move between computers.
+## Usage
 
-## Using as a Git Submodule
+This repository is intended to be included in other projects as a Git submodule.
 
-From the root directory of your project, run:
+From the root directory of an existing project, run:
 
 ```bash
-git submodule add https://github.com/RandomGgames/RandomGgamesPyUtils
+git submodule add https://github.com/RandomGgames/text_file_utils
 ```
 
-This adds the repository as a submodule in your project directory.
+This adds the repository to your project.
 
-To import functions from a submodule, use its path in your Python imports. For example:
+You can then import the utilities directly:
 
 ```python
-from RandomGgamesPyUtils.json_file_functions import *
+from text_file_utils import read_text_file, write_text_file
 ```
 
-### Cloning a Project with Submodules
+## Cloning a Project with the Submodule
 
-When cloning a project that contains submodules, use:
+When cloning a project that contains this repository as a submodule, use:
 
 ```bash
 git clone --recurse-submodules <project-repository-url>
 ```
 
-If you have already cloned the project, initialize its submodules with:
+If the project has already been cloned, initialize the submodule with:
 
 ```bash
 git submodule update --init --recursive
+```
+
+## Updating the Utilities
+
+The parent project tracks a specific commit of this repository. To update to the latest remote commit:
+
+```bash
+git submodule update --remote
 ```
